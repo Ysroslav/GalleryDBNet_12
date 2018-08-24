@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://servicews.service.gallery.bodrov.ru/" xmlns:tns="http://servicews.service.gallery.bodrov.ru/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="addNewPicture" type="tns:addNewPicture"/>
+
+  <xs:element name="addNewPictureResponse" type="tns:addNewPictureResponse"/>
+
+  <xs:element name="getListPicture" type="tns:getListPicture"/>
+
+  <xs:element name="getListPictureResponse" type="tns:getListPictureResponse"/>
+
+  <xs:element name="getPictureById" type="tns:getPictureById"/>
+
+  <xs:element name="getPictureByIdResponse" type="tns:getPictureByIdResponse"/>
+
+  <xs:element name="getPictureByTitle" type="tns:getPictureByTitle"/>
+
+  <xs:element name="getPictureByTitleResponse" type="tns:getPictureByTitleResponse"/>
+
+  <xs:element name="getPictureByTypeId" type="tns:getPictureByTypeId"/>
+
+  <xs:element name="getPictureByTypeIdResponse" type="tns:getPictureByTypeIdResponse"/>
+
+  <xs:element name="pictureDTO" type="tns:pictureDTO"/>
+
+  <xs:element name="removePictureById" type="tns:removePictureById"/>
+
+  <xs:element name="removePictureByIdResponse" type="tns:removePictureByIdResponse"/>
+
+  <xs:complexType name="addNewPicture">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="addNewPictureResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:resultDTO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resultDTO">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="success" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getListPicture">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getListPictureResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:pictureDTO" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pictureDTO">
+    <xs:sequence>
+      <xs:element name="apostel" type="xs:string" minOccurs="0"/>
+      <xs:element name="athorId" type="xs:string" minOccurs="0"/>
+      <xs:element name="dateInput" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="pictureType" type="xs:string" minOccurs="0"/>
+      <xs:element name="titlePicture" type="xs:string" minOccurs="0"/>
+      <xs:element name="valueBalance" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPictureById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPictureByIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:pictureDTO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="removePictureById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="removePictureByIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:resultDTO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPictureByTypeId">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPictureByTypeIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:pictureDTO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPictureByTitle">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPictureByTitleResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:pictureDTO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
